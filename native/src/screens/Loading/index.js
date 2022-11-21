@@ -1,12 +1,22 @@
 import logo from '../../../assets/logo.jpeg';
-import { Logo, Title } from './styles';
-import { View } from 'react-native';
+import { Container, Title, Logo} from './styles';
+import { TouchableOpacity } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
 export default function Loading () {
+
+    const navigation = useNavigation();
+
+    function screenLogin(){
+        navigation.navigate('Login');
+    }
+
     return (
-        <View>
+        <Container>
             <Logo source={logo} />
-            <Title>Loading...</Title>
-        </View>
+            <TouchableOpacity onPress={screenLogin}>
+                <Title>Loading...</Title>
+            </TouchableOpacity>
+        </Container>
     );
 }

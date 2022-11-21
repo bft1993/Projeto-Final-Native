@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import logo from '../../../assets/logo.jpeg';
-import { Container, Logo, Title, LoginButton, LoginText } from './styles';
+import { Container, Logo, Title, LoginButton, LoginText, InputCPF, InputConfirm, InputNew } from './styles';
 import { StatusBar } from 'expo-status-bar';
 
 export default function Login () {
