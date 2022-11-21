@@ -1,17 +1,20 @@
-import { createNativeStackNavigator} from '@react-navigation/native-stack';
 import React from 'react';
-import ForgotPassword from '../screens/ForgotPassword';
-import Login from '../screens/Login';
-import Loading from '../screens/Loading';
+import ForgotPassword from '../screens/ForgotPassword/index';
+import Login from '../screens/Login/index';
+import Loading from '../screens/Loading/index';
+import { createStackNavigator } from '@react-navigation/stack';
 
-const { Screen, Navigator } = createNativeStackNavigator();
+const Stack = createStackNavigator();
 
 export function StackRoutes () {
     return (
-        <Navigator screenOptions={{headerShown:false}}>
-            <Screen name='Login' component={Login} />
-            <Screen name='ForgotPassword' component={ForgotPassword} />
-            <Screen name='Loading' component={Loading} />
-        </Navigator>
-    )
+        <Stack.Navigator
+            screenOptions={{
+                headerShown: false,
+            }}>
+            <Stack.Screen name='Loading' component={Loading} />
+            <Stack.Screen name='Login' component={Login} />
+            <Stack.Screen name='ForgotPassword' component={ForgotPassword} />
+        </Stack.Navigator>
+    );
 }
