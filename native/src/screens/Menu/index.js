@@ -15,7 +15,7 @@ export default function Menu () {
     }
 
     function screenUser(){
-        navigation.navigate('User');
+        navigation.navigate('Users');
     }
 
     function screenCategories(){

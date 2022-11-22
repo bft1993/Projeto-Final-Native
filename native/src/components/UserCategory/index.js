@@ -6,35 +6,41 @@ import colors from "../../themes/colors";
 import { Card, Photo, TextContainer, Name, ButtonsContainer, CustomButton } from "./styles";
 import { IdContext } from "../../context/index"
 
-export const ItemCategory = ({ name, photo }) => {
+export const UserCategory = ({ statusUsuario, cpfUsuario, fotoUsuario, dtNascimentoUsuario, loginUsuario, nomeUsuario, senhaUsuario }) => {
   const {id, setId} = useContext(IdContext);
   const navigation = useNavigation();
 
-  function deleteItem(identificador) {
-    Api.delete(`/categoria/${identificador}`)
+  function deleteUsuario(identificador) {
+    Api.delete(`/usuario/${identificador}`)
       .then(res => {
-      alert("Item excluido com sucesso!");
-      navigation.navigate("Categories")
-     }).catch(() => alert("Erro!"));
+      alert("Usuário excluido com sucesso!");
+      navigation.navigate("Users")
+     });
   };
 
-  function editItem (identificador) {
+  function editUsuario (identificador) {
     const itemId = identificador;
     setId(itemId);
-    navigation.navigate("EditCategory");
+    navigation.navigate("EditUser");
   };
 
   return (
     <Card>
-      <Photo source={{ uri: photo }} />
+      <Photo source={{ uri: fotoUsuario }} />
       <TextContainer>
-        <Name>{name}</Name>
+        <Name>{nomeUsuario}</Name>
+        <Name>{statusUsuario}</Name>
+        <Name>{cpfUsuario}</Name>
+        <Name>{dtNascimentoUsuario}</Name>
+        <Name>{loginUsuario}</Name>
+        <Name>{senhaUsuario}</Name>
       </TextContainer>
+
       <ButtonsContainer>
-        <CustomButton onPress={() => deleteItem(id)}>
+        <CustomButton onPress={() => deleteUsuario(id)}>
           <FontAwesome5 name="trash" size={20} color={colors.primary} />
         </CustomButton>
-        <CustomButton onPress={() => editItem(id)} >
+        <CustomButton onPress={() => editUsuario(id)} >
           <MaterialIcons name="edit" size={24} color={colors.primary} />
         </CustomButton>
       </ButtonsContainer>

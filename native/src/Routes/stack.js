@@ -9,6 +9,9 @@ import { Categories } from '../screens/Categories/index';
 import { CategoryRegister } from '../screens/CategoryRegister/index';
 import { EditCategory } from '../screens/EditCategory/index';
 import { createStackNavigator } from '@react-navigation/stack';
+import { UserRegister } from '../screens/UserRegister';
+import { UserEdit } from '../screens/UserEdit';
+import { Users } from '../screens/Users';
 // import { Ionicons } from '@expo/vector-icons';
 // import { TouchableHighlight } from 'react-native'; 
 
@@ -47,6 +50,10 @@ export function StackRoutes () {
             <Stack.Screen name='Categories' component={Categories} />
             <Stack.Screen name='CategoryRegister' component={CategoryRegister} />
             <Stack.Screen name='EditCategory' component={EditCategory} />
+
+            <Stack.Screen name='Users' component={Users} />
+            <Stack.Screen name='UserRegister' component={UserRegister} />
+            <Stack.Screen name='UserEdit' component={UserEdit} />
         </Stack.Navigator>
     );
 }
