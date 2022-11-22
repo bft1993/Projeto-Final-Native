@@ -1,14 +1,14 @@
-import { useContext, useState } from "react";
-import { AppRegistry } from "react-native-web";
-import { Container, Logo, Title, Input, PlusButton, ButtonText } from './styles';
-import logo from '../../../assets/logo.jpeg';
+import { useContext, useEffect } from "react";
+import { Header } from "react-navigation-stack";
+
 
 export const EditCategory = ({ navigation }) => {
-    const {id} = useContext(IdContext);
+    const { id } = useContext(IdContext);
     const [name, setName] = useState({});
     const [photo, setPhoto] = useState({});
-    const getCategory = async() => {
-        const {data} = await Api.get(`/categoria/${id}`);
+
+    const getCategory = async () => {
+        const { data } = await Api.get(`/categoria/${id}`);
         setName(data.name);
         setPhoto(data.photo);
     };
@@ -22,26 +22,24 @@ export const EditCategory = ({ navigation }) => {
     };
 
     function save() {
-        App.put(`/categoria/${id}`, {
+        Api.put(`/categoria/${id}`, {
             nome: name,
             foto: photo,
         }).then(() => {
             alert("Item editado com sucesso!");
             navigation.goBack();
-        })
+        });
     };
 
     return (
-        <Container>
-            <Logo source={logo} />
-            <Title>Editar categoria</Title>
+        <MainContainer>
+            <Header title={"Editar categoria"} goBack={goBack} iconName={"arrow-back"} />
             <ImgButton sourceImg={{ uri: photo }} />
-            <Input name={"Nome:"} value={name} onChangeText={(text) => setName(text)} />
-            <PlusButton style={{ marginTop: 60 }} onPress={() => save()}>
-                <ButtonText>
-                    Salvar
-                </ButtonText>
-            </PlusButton>
-        </Container>
-    )
+            <EditInput name={"Nome:"} value={name} onChangeText={(text) => setName(text)} />
+            <MainButton style={{ marginTop: 60 }} onPress={() => save()} >      </MainButton>
+            <ButtonText>
+                Salvar
+            </ButtonText>
+        </MainContainer>
+    );
 };
