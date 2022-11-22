@@ -14,16 +14,16 @@ export default function Menu () {
         navigation.navigate('Loading');
     }
 
-    function screenUsuario(){
-        navigation.navigate('usuario');
+    function screenUser(){
+        navigation.navigate('User');
     }
 
-    function screenCategoria(){
-        navigation.navigate('Categoria');
+    function screenCategories(){
+        navigation.navigate('Categories');
     }
 
-    function screenProduto(){
-        navigation.navigate('Produto');
+    function screenProduct(){
+        navigation.navigate('Product');
     }
     
 
@@ -32,19 +32,19 @@ export default function Menu () {
             <Logo source={logo}/>
             <Title>Menu</Title>
             <UsuarioButton>
-            <TouchableOpacity onPress={screenUsuario}>
+            <TouchableOpacity onPress={screenUser}>
             <LoginText>Usuario</LoginText>
             </TouchableOpacity>
             </UsuarioButton>
 
             <CategoriaButton>
-            <TouchableOpacity onPress={screenCategoria}>
+            <TouchableOpacity onPress={screenCategories}>
                 <LoginText>Categoria</LoginText>
             </TouchableOpacity>
             </CategoriaButton>
 
             <ProdutoButton>
-            <TouchableOpacity onPress={screenProduto}>
+            <TouchableOpacity onPress={screenProduct}>
                 <LoginText>Produto</LoginText>
             </TouchableOpacity>
             </ProdutoButton>

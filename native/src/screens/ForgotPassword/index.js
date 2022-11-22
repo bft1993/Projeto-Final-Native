@@ -18,8 +18,6 @@ export default function Login () {
         new: '',
         confirm: '',
     });
-    
-    const navigation = useNavigation();
 
     function screenLogin(){
         navigation.navigate('Login');
@@ -36,12 +34,8 @@ export default function Login () {
            <TouchableOpacity onPress={screenLogin}>
                 <LoginText >ENVIAR</LoginText>
             </TouchableOpacity>
-            <LoginButton>
-                <TouchableOpacity onPress={screenLogin}>
-                <LoginText>ENVIAR</LoginText>
-                </TouchableOpacity>
             </LoginButton>
-            <StatusBar style="auto" />
+            <StatusBar style='auto' />
         </Container>
     );
 }
