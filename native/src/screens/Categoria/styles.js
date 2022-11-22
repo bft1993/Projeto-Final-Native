@@ -66,7 +66,7 @@ export const LoginText = styled.Text`
     position: relative;
 `;
 
-export const LoginButton = styled.TouchableOpacity`
+export const SairButton = styled.TouchableOpacity`
     height: 33px;
     width: 131px;
     border-radius: 5px;

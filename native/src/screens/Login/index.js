@@ -12,6 +12,10 @@ export default function Login () {
         
     });
 
+    function screenMenu(){
+        navigation.navigate('Menu');
+    }
+
     const navigation = useNavigation();
 
     function screenForgotPassword(){
@@ -28,8 +32,11 @@ export default function Login () {
                 <Recover>Esqueceu sua senha? Clique aqui</Recover>
             </TouchableOpacity>
             <LoginButton>
+            <TouchableOpacity onPress={screenMenu}>
                 <LoginText>ENTRAR</LoginText>
+            </TouchableOpacity>
             </LoginButton>
+            
             <StatusBar style='auto' />
         </Container>
     );
