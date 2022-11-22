@@ -66,44 +66,6 @@ export const LoginText = styled.Text`
     position: relative;
 `;
 
-export const UsuarioButton = styled.TouchableOpacity`
-    height: 70px;
-    width: 288px;
-    border-radius: 5px;
-    margin-top: 40px;
-    margin-bottom: 5px;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 4px 4px #456135;
-    background-color: #87B28E;
-`;
-
-
-
-export const CategoriaButton = styled.TouchableOpacity`
-    height: 70px;
-    width: 288px;
-    border-radius: 5px;
-    margin-top: 40px;
-    margin-bottom: 15px;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 4px 4px #456135;
-    background-color: #87B28E;
-`;
-
-export const ProdutoButton = styled.TouchableOpacity`
-    height: 70px;
-    width: 288px;
-    border-radius: 5px;
-    margin-top: 25px;
-    margin-bottom: 45px;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 4px 4px #456135;
-    background-color: #87B28E;
-`;
-
 export const SairButton = styled.TouchableOpacity`
     height: 33px;
     width: 131px;

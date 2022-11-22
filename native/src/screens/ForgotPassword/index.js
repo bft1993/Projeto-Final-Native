@@ -7,6 +7,12 @@ import { TouchableOpacity } from 'react-native';
 
 export default function Login () {
 
+    const navigation = useNavigation();
+
+    function screenLogin(){
+        navigation.navigate('Login');
+    }
+
     const [user, setUser] = useState({
         cpf: '',
         new: '',
@@ -26,6 +32,10 @@ export default function Login () {
             <InputCPF value={user.cpf} onChangeText={setUser}placeholder={'CPF:'}placeholderTextColor={'#22430F font-weight: bold'} />
             <InputNew value={user.new} onChangeText={setUser}placeholder={'Nova Senha:'}placeholderTextColor={'#22430F font-weight: bold'} />
             <InputConfirm value={user.confirm} onChangeText={setUser}placeholder={'Confirme Nova Senha:'}placeholderTextColor={'#22430F font-weight: bold'} />
+           <LoginButton>
+           <TouchableOpacity onPress={screenLogin}>
+                <LoginText >ENVIAR</LoginText>
+            </TouchableOpacity>
             <LoginButton>
                 <TouchableOpacity onPress={screenLogin}>
                 <LoginText>ENVIAR</LoginText>
