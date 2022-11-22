@@ -16,14 +16,14 @@ export const InputContainer = styled.View`
 `;
 
 export const CustomInput = styled.TextInput`
-    height: 26px;
-    width: 346px;
-    background-color: ${colors.primary};
-    border-bottom-color: ${colors.secondary};
-    border-bottom-width: 1px;
-    align-items: center;
-    color: ${colors.secondary};
-    font-weight: 400;
-    font-family: "Roboto";
-    font-size: 20px;
+    height: 31px;
+    width: 188px;
+    border-radius: 5px;
+    padding-left: 5px;
+    font-family: sans-serif;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 4px #456135;
+    background-color: #87B28E;
 `;
+

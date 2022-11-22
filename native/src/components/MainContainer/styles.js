@@ -1,9 +1,17 @@
 import styled from "styled-components/native";
-import colors from "../../themes/colors.js";
+// import colors from "../../themes/colors.js";
 
 export const MainContainer = styled.View`
   flex: 1;
   background-size: cover;
   align-items: center;
-  background-color: ${colors.primary};
+  background-color: #FFFFFF;
 `;
+
+
+// export const MainContainer = styled.View`
+//     flex: 1;
+//     background-color: #FFFFFF;
+//     align-items: center;
+//     justify-content: center;
+// `;

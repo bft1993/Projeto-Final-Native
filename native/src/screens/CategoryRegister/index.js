@@ -1,10 +1,15 @@
 import { useState } from "react";
-import { Api } from "../../services/index"
-import { Container, Logo, Title, Input, PlusButton } from './styles';
-import logo from '../../../assets/logo.jpeg';
+import { MainContainer } from "../../components/MainContainer/styles.js";
+import { Header } from "../../components/Header/index.js";
+import { EditInput } from "../../components/EditInput/index.js";
+import { MainButton, ButtonText } from "../../components/MainButton/styles.js";
+import { ImgButton } from "../../components/ImgButton/index.js";
+import { Api } from "../../services/index.js";
+
 export const CategoryRegister = ({navigation}) => {
     const [name, setName] = useState("");
-    const [photo, setPhoto] = useState("");
+    const [photo, setPhoto] = useState("https://i.imgur.com/khLyPgQ.png");
+
     const addPost = () => {
         const data = {
             nome: name,
@@ -13,36 +18,35 @@ export const CategoryRegister = ({navigation}) => {
 
         Api.post("/categoria", data)
            .then((res) => {
-                alert("Item cadastrado com sucesso!");
+                alert("Item Cadastrado com sucesso!");
                 navigation.goBack();
            });
     };
 
-    function goBack() {
+    function goBack () {
         navigation.goBack();
-    }; 
+    }
 
     return (
-        <Container>
-            <Logo source={logo} />
-            <Title>Cadastrar categoria</Title>
-            <PlusButton sourceImage={photo} />
-            <Input
-                placeHolder={"Informe a cartegoria"}
+        <MainContainer>
+            <Header title = {"Cadastrar categoria"} goBack = {goBack} iconName = {"arrow-back"}  />
+            <ImgButton sourceImage = {photo}/>
+            <EditInput
+                placeHolder={"Informe a categoria"}
                 value={name}
                 onChangeText={(text) => setName(text)}
                 autoCapitalize={"words"}
             />
-            <Input
+            <EditInput
                 placeHolder={"Informe o endereço da imagem"}
                 onChangeText={(text) => setPhoto(text)}
                 autoCapitalize={"words"}
             />
-            <PlusButton onPress={() => addPost()} >
+            <MainButton onPress={() => addPost()}>
                 <ButtonText>
                     Cadastrar
                 </ButtonText>
-            </PlusButton>
-        </Container>
+            </MainButton>
+        </MainContainer>
     )
 };
