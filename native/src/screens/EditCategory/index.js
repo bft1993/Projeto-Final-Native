@@ -1,14 +1,12 @@
 import { useContext, useState } from "react";
 import { AppRegistry } from "react-native-web";
 import { Container, Logo, Title, Input, PlusButton, ButtonText } from './styles';
+import logo from '../../../assets/logo.jpeg';
 
 export const EditCategory = ({ navigation }) => {
     const {id} = useContext(IdContext);
-    
     const [name, setName] = useState({});
-    
     const [photo, setPhoto] = useState({});
-    
     const getCategory = async() => {
         const {data} = await Api.get(`/categoria/${id}`);
         setName(data.name);

@@ -2,6 +2,8 @@ import { useState } from 'react';
 import logo from '../../../assets/logo.jpeg';
 import { Container, Logo, Title, LoginButton, LoginText, InputCPF, InputConfirm, InputNew } from './styles';
 import { StatusBar } from 'expo-status-bar';
+import { useNavigation } from '@react-navigation/native';
+import { TouchableOpacity } from 'react-native';
 
 export default function Login () {
 
@@ -10,6 +12,12 @@ export default function Login () {
         new: '',
         confirm: '',
     });
+    
+    const navigation = useNavigation();
+
+    function screenLogin(){
+        navigation.navigate('Login');
+    }
 
     return (
         <Container>
@@ -19,7 +27,9 @@ export default function Login () {
             <InputNew value={user.new} onChangeText={setUser}placeholder={'Nova Senha:'}placeholderTextColor={'#22430F font-weight: bold'} />
             <InputConfirm value={user.confirm} onChangeText={setUser}placeholder={'Confirme Nova Senha:'}placeholderTextColor={'#22430F font-weight: bold'} />
             <LoginButton>
+                <TouchableOpacity onPress={screenLogin}>
                 <LoginText>ENVIAR</LoginText>
+                </TouchableOpacity>
             </LoginButton>
             <StatusBar style="auto" />
         </Container>

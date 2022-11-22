@@ -63,7 +63,7 @@ export const LoginText = styled.Text`
     text-align: center;
     color: #22430F;
     font-weight: bold;
-    position: absolute;
+    position: relative;
 `;
 
 export const LoginButton = styled.TouchableOpacity`

@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { Api } from "../../services/index"
 import { Container, Logo, Title, Input, PlusButton } from './styles';
+import logo from '../../../assets/logo.jpeg';
 export const CategoryRegister = ({navigation}) => {
     const [name, setName] = useState("");
     const [photo, setPhoto] = useState("");
-
     const addPost = () => {
         const data = {
             nome: name,
