@@ -7,19 +7,19 @@ import { Card, Photo, TextContainer, Name, ButtonsContainer, CustomButton } from
 import { IdContext } from "../../context/index"
 
 export const ItemCategory = ({ name, photo }) => {
-  const {setId} = useContext(IdContext);
+  const {id, setId} = useContext(IdContext);
   const navigation = useNavigation();
 
-  function deleteItem(id) {
-    Api.delete(`/categoria/${id}`)
+  function deleteItem(identificador) {
+    Api.delete(`/categoria/${identificador}`)
       .then(res => {
       alert("Item excluido com sucesso!");
       navigation.navigate("Categories")
-     });
+     }).catch(() => alert("Erro!"));
   };
 
-  function editItem (id) {
-    const itemId = id;
+  function editItem (identificador) {
+    const itemId = identificador;
     setId(itemId);
     navigation.navigate("EditCategory");
   };

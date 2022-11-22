@@ -21,8 +21,7 @@ export const CustomInput = styled.TextInput`
     border-radius: 5px;
     padding-left: 5px;
     font-family: sans-serif;
-    margin-top: 30px;
-    margin-bottom: 30px;
+    margin-bottom: 5px;
     box-shadow: 0 4px 4px #456135;
     background-color: #87B28E;
 `;
