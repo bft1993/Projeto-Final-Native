@@ -22,6 +22,10 @@ export default function Login () {
         navigation.navigate('ForgotPassword');
     }
 
+    function screenMenu(){
+        navigation.navigate('Menu');
+    }
+
     return (
         <Container>
             <Logo source={logo} />

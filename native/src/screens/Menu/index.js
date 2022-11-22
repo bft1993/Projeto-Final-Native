@@ -1,3 +1,4 @@
+
 import logo from '../../../assets/logo.jpeg';
 import { Container, Logo, Title, LoginText, ProdutoButton, UsuarioButton, CategoriaButton, SairButton } from './styles';
 import { StatusBar } from 'expo-status-bar';
@@ -59,4 +60,4 @@ export default function Menu () {
             <StatusBar style="auto" />
         </Container>
     );
-}
+ }
