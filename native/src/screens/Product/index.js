@@ -1,6 +1,4 @@
-
-
-export const Usuario = () => {
+export const Product = () => {
     return (
       <></>
     )

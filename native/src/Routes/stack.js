@@ -3,9 +3,8 @@ import ForgotPassword from '../screens/ForgotPassword/index';
 import Login from '../screens/Login/index';
 import Loading from '../screens/Loading/index';
 import Menu from '../screens/Menu/index';
-import {Produto} from '../screens/Produto';
-import { Usuario } from '../screens/Usuario';
-import { Categoria } from '../screens/Categoria';
+// import { Product } from '../screens/Product/index';
+// import { User } from '../screens/User/index';
 import { Categories } from '../screens/Categories/index';
 import { CategoryRegister } from '../screens/CategoryRegister/index';
 import { EditCategory } from '../screens/EditCategory/index';
@@ -43,9 +42,8 @@ export function StackRoutes () {
             <Stack.Screen name='Login' component={Login} />
             <Stack.Screen name='ForgotPassword' component={ForgotPassword} />
             <Stack.Screen name='Menu' component={Menu} />
-            <Stack.Screen name='Usuario' component={Usuario} />
-            <Stack.Screen name='Categoria' component={Categoria} />
-            <Stack.Screen name='Produto' component={Produto} />
+            {/* <Stack.Screen name='User' component={User} />
+            <Stack.Screen name='Product' component={Product} /> */}
             <Stack.Screen name='Categories' component={Categories} />
             <Stack.Screen name='CategoryRegister' component={CategoryRegister} />
             <Stack.Screen name='EditCategory' component={EditCategory} />
