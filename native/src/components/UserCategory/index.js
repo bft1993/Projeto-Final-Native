@@ -6,7 +6,7 @@ import colors from "../../themes/colors";
 import { Card, Photo, TextContainer, Name, ButtonsContainer, CustomButton } from "./styles";
 import { IdContext } from "../../context/index"
 
-export const UserCategory = ({ statusUsuario, cpfUsuario, fotoUsuario, dtNascimentoUsuario, loginUsuario, nomeUsuario, senhaUsuario }) => {
+export const UserCategory = ({ statusUsuario, cpfUsuario, fotoUsuario, dtNascimentoUsuario, loginUsuario, nomeUsuario, senhaUsuario, identificador }) => {
   const {id, setId} = useContext(IdContext);
   const navigation = useNavigation();
 
@@ -40,7 +40,7 @@ export const UserCategory = ({ statusUsuario, cpfUsuario, fotoUsuario, dtNascime
         <CustomButton onPress={() => deleteUsuario(id)}>
           <FontAwesome5 name="trash" size={20} color={colors.primary} />
         </CustomButton>
-        <CustomButton onPress={() => editUsuario(id)} >
+        <CustomButton onPress={() => editUsuario(identificador)} >
           <MaterialIcons name="edit" size={24} color={colors.primary} />
         </CustomButton>
       </ButtonsContainer>

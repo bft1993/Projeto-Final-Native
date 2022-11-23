@@ -12,7 +12,7 @@ export const Users = () => {
   const [user, setUser] = useState([]);
 
   const renderItem = ({ item }) => (
-    <UserCategory statusUsuario={item.ativo} cpfUsuario={item.cpf} fotoUsuario={item.foto} dtNascimentoUsuario={item.dtNascimento} idUsuario={item.id} loginUsuario={item.login} nomeUsuario={item.nome} senhaUsuario={item.senha}  />
+    <UserCategory statusUsuario={item.ativo} cpfUsuario={item.cpf} fotoUsuario={item.foto} dtNascimentoUsuario={item.dtNascimento} idUsuario={item.id} loginUsuario={item.login} nomeUsuario={item.nome} senhaUsuario={item.senha} identificador={item.id} />
   );
 
   useEffect(() => {
