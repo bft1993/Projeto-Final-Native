@@ -29,6 +29,8 @@ export const UserEdit = ({ navigation }) => {
         setSenha(data.senha);
     };
 
+    console.log(id)
+
     useEffect(() => {
         getUser();
     }, []);
@@ -39,13 +41,13 @@ export const UserEdit = ({ navigation }) => {
 
     function save() {
         Api.put(`/usuario/${id}`, {
-            statusUsuario: ativo,
-            cpfUsuario: cpf,
-            fotoUsuario: foto,
-            dtNascimentoUsuario: dtNascimento,
-            loginUsuario: login,
-            nomeUsuario: nome,
-            senhaUsuario: senha,
+            ativo: ativo,
+            cpf: cpf,
+            foto: foto,
+            dtNascimento: dtNascimento,
+            login: login,
+            nome: nome,
+            senha: senha,
         }).then(() => {
             alert("Usuário editado com sucesso!");
             navigation.goBack();
@@ -64,32 +66,32 @@ export const UserEdit = ({ navigation }) => {
             />
             <EditInputUser
                 placeHolder={"Informe o CPF"}
+                value={cpf}
                 onChangeText={(text) => setCpf(text)}
                 autoCapitalize={"words"}
             />
             <EditInputUser
                 placeHolder={"Informe o endereço da foto"}
+                value={foto}
                 onChangeText={(text) => setFoto(text)}
                 autoCapitalize={"words"}
             />
             <EditInputUser
                 placeHolder={"Informe a data de nascimento"}
+                value={dtNascimento}
                 onChangeText={(text) => setDtNascimento(text)}
                 autoCapitalize={"words"}
             />
             <EditInputUser
                 placeHolder={"Informe o login"}
+                value={login}
                 onChangeText={(text) => setLogin(text)}
                 autoCapitalize={"words"}
             />
             <EditInputUser
                 placeHolder={"Informe o nome de usuário"}
+                value={nome}
                 onChangeText={(text) => setNome(text)}
-                autoCapitalize={"words"}
-            />
-            <EditInputUser
-                placeHolder={"Informe a senha do usuário"}
-                onChangeText={(text) => setSenha(text)}
                 autoCapitalize={"words"}
             />
 
