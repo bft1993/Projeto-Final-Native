@@ -21,7 +21,7 @@ export const UserCategory = ({ statusUsuario, cpfUsuario, fotoUsuario, dtNascime
   function editUsuario (identificador) {
     const itemId = identificador;
     setId(itemId);
-    navigation.navigate("EditUser");
+    navigation.navigate("UserEdit");
   };
 
   return (

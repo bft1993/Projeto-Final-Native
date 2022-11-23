@@ -1,5 +1,11 @@
-import { useContext, useEffect } from "react";
-import { Header } from "react-navigation-stack";
+import { useContext, useEffect, useState } from "react";
+import { EditInputUser } from "../../components/EditInputUser";
+import { Header } from "../../components/Header";
+import { ImgButton } from "../../components/ImgButton";
+import { ButtonText, MainButton } from "../../components/MainButton/styles";
+import { MainContainer } from "../../components/MainContainer/styles";
+import { IdContext } from "../../context";
+import { Api } from "../../services";
 
 
 export const UserEdit = ({ navigation }) => {
@@ -49,7 +55,7 @@ export const UserEdit = ({ navigation }) => {
     return (
         <MainContainer>
             <Header title = {"Editar Usuario"} goBack = {goBack} iconName = {"arrow-back"}  />
-            <ImgButton sourceImage = {photo}/>
+            <ImgButton sourceImage = {foto}/>
             <EditInputUser
                 placeHolder={"Informe o status"}
                 value={ativo}
@@ -87,11 +93,12 @@ export const UserEdit = ({ navigation }) => {
                 autoCapitalize={"words"}
             />
 
-            <MainButton style={{ marginTop: 60 }} onPress={() => save()} >      </MainButton>
+            <MainButton onPress={() => save()}>
+                <ButtonText>
+                    Cadastrar
+                </ButtonText>
+            </MainButton>
 
-            <ButtonText>
-                Salvar
-            </ButtonText>
         </MainContainer>
     );
 };
