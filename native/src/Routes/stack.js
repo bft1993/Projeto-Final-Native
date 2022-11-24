@@ -16,6 +16,7 @@ import colors from "../themes/colors.js";
 import { Product } from '../screens/Product/index';
 import { ProductRegister } from '../screens/ProductRegister/index';
 import { EditProduct } from '../screens/EditProduct/index';
+import { UserDelete } from '../screens/UserDelete';
 
 
 const Stack = createStackNavigator();
@@ -75,6 +76,7 @@ export function StackRoutes () {
             <Stack.Screen name='Product' component={Product} />
             <Stack.Screen name='ProductRegister' component={ProductRegister} />
             <Stack.Screen name='EditProduct' component={EditProduct} />
+            <Stack.Screen name='UserDelete' component={UserDelete} />
         </Stack.Navigator>
     );
 }
