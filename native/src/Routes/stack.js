@@ -10,6 +10,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { UserRegister } from '../screens/UserRegister';
 import { UserEdit } from '../screens/UserEdit';
 import { Users } from '../screens/Users';
+import { UserDelete } from '../screens/UserDelete';
 
 const Stack = createStackNavigator();
 
@@ -33,6 +34,7 @@ export function StackRoutes () {
             <Stack.Screen name='Users' component={Users} />
             <Stack.Screen name='UserRegister' component={UserRegister} />
             <Stack.Screen name='UserEdit' component={UserEdit} />
+            <Stack.Screen name='UserDelete' component={UserDelete} />
         </Stack.Navigator>
     );
 }
