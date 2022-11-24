@@ -1,4 +1,5 @@
 import styled from "styled-components/native";
+import colors from "../../themes/colors.js";
 
 export const Container = styled.View`
   margin-top: 30px;
@@ -21,7 +22,7 @@ export const CustomInput = styled.TextInput`
     padding-left: 5px;
     font-family: sans-serif;
     margin: 3px;
-    box-shadow: 0 4px 4px #456135;
-    background-color: #87B28E;
+    box-shadow: 0 4px 4px ${colors.primary};
+    background-color: ${colors.fivenary};
 `;
 

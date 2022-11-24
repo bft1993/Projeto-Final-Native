@@ -1,8 +1,9 @@
 import styled from 'styled-components/native';
+import colors from "../../themes/colors.js";
 
 export const Container = styled.View`
     flex: 1;
-    background-color: #FFFFFF;
+    background-color: ${colors.quaternary};
     align-items: center;
     justify-content: center;
 `;
@@ -14,7 +15,7 @@ export const Logo = styled.Image`
 `;
 
 export const Title = styled.Text`
-    color: #648E4B;
+    color: ${colors.secondary};
     font-weight: 800;
     font-size: 24px;
     margin-top: 42px;
@@ -29,8 +30,8 @@ export const InputCPF = styled.TextInput`
     font-family: sans-serif;
     margin-top: 10px;
     margin-bottom: 25px;
-    box-shadow: 0 4px 4px #456135;
-    background-color: #87B28E;
+    box-shadow: 0 4px 4px ${colors.primary};
+    background-color: ${colors.fivenary};
 `;
 
 export const InputNew= styled.TextInput`
@@ -40,8 +41,8 @@ export const InputNew= styled.TextInput`
     padding-left: 5px;
     font-family: sans-serif;
     margin-bottom: 20px;
-    box-shadow: 0 4px 4px #456135;
-    background-color: #87B28E;
+    box-shadow: 0 4px 4px ${colors.primary};
+    background-color: ${colors.fivenary};
     left: 39px;
     top: 506px;
 
@@ -54,14 +55,14 @@ export const InputConfirm= styled.TextInput`
     padding-left: 5px;
     font-family: sans-serif;
     margin-bottom: 1px;
-    box-shadow: 0 4px 4px #456135;
-    background-color: #87B28E;
+    box-shadow: 0 4px 4px ${colors.primary};
+    background-color: ${colors.fivenary};
 `;
 
 export const LoginText = styled.Text`
     font-family: sans-serif;
     text-align: center;
-    color: #22430F;
+    color: ${colors.sixnary};
     font-weight: bold;
     position: relative;
 `;
@@ -74,8 +75,8 @@ export const UsuarioButton = styled.TouchableOpacity`
     margin-bottom: 5px;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 4px 4px #456135;
-    background-color: #87B28E;
+    box-shadow: 0 4px 4px ${colors.primary};
+    background-color: ${colors.fivenary};
 `;
 
 
@@ -88,8 +89,8 @@ export const CategoriaButton = styled.TouchableOpacity`
     margin-bottom: 15px;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 4px 4px #456135;
-    background-color: #87B28E;
+    box-shadow: 0 4px 4px ${colors.primary};
+    background-color: ${colors.fivenary};
 `;
 
 export const ProdutoButton = styled.TouchableOpacity`
@@ -100,8 +101,8 @@ export const ProdutoButton = styled.TouchableOpacity`
     margin-bottom: 45px;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 4px 4px #456135;
-    background-color: #87B28E;
+    box-shadow: 0 4px 4px ${colors.primary};
+    background-color: ${colors.fivenary};
 `;
 
 export const SairButton = styled.TouchableOpacity`
@@ -112,6 +113,6 @@ export const SairButton = styled.TouchableOpacity`
     margin-bottom: 5px;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 4px 4px #456135;
-    background-color: #87B28E;
+    box-shadow: 0 4px 4px ${colors.primary};
+    background-color: ${colors.fivenary};
 `;

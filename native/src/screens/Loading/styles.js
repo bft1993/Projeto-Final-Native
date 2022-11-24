@@ -1,8 +1,9 @@
 import styled from 'styled-components/native';
+import colors from "../../themes/colors.js";
 
 export const Container = styled.View`
     flex: 1;
-    background-color: #FFFFFF;
+    background-color: ${colors.quaternary};
     align-items: center;
     justify-content: center;
 `;
@@ -14,7 +15,7 @@ export const Logo = styled.Image`
 `;
 
 export const Title = styled.Text`
-    color: #648E4B;
+    color: ${colors.secondary};
     font-weight: 800;
     font-size: 24px;
     margin-top: 42px;

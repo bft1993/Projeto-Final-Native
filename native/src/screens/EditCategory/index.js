@@ -1,16 +1,22 @@
-import { useContext, useEffect } from "react";
-import { Header } from "react-navigation-stack";
-
+import { useContext, useEffect, useState } from "react";
+import { Header } from "../../components/Header/index.js";
+import { EditInput } from "../../components/EditInput/index.js";
+import { ImgButton } from "../../components/ImgButton/index.js";
+import { ButtonText, MainButton } from "../../components/MainButton/styles.js";
+import { MainContainer } from "../../components/MainContainer/styles.js";
+import { IdContext } from "../../context/index.js";
+import { Api } from "../../services/index.js";
 
 export const EditCategory = ({ navigation }) => {
+
     const { id } = useContext(IdContext);
     const [name, setName] = useState({});
     const [photo, setPhoto] = useState({});
 
     const getCategory = async () => {
         const { data } = await Api.get(`/categoria/${id}`);
-        setName(data.name);
-        setPhoto(data.photo);
+        setName(data.nome);
+        setPhoto(data.foto);
     };
 
     useEffect(() => {
@@ -34,12 +40,26 @@ export const EditCategory = ({ navigation }) => {
     return (
         <MainContainer>
             <Header title={"Editar categoria"} goBack={goBack} iconName={"arrow-back"} />
-            <ImgButton sourceImg={{ uri: photo }} />
-            <EditInput name={"Nome:"} value={name} onChangeText={(text) => setName(text)} />
-            <MainButton style={{ marginTop: 60 }} onPress={() => save()} >      </MainButton>
+            {/* <ImgButton sourceImg={{ uri: photo }} /> */}
+            <ImgButton sourceImage = {photo}/>
+            <EditInput
+                name={"Nome:"}
+                placeHolder={"Informe a categoria"}
+                value={name}
+                onChangeText={(text) => setName(text)}
+                autoCapitalize={"words"}
+            />
+            <EditInput
+                name={"Foto:"}
+                placeHolder={"Informe o endereço da imagem"}
+                onChangeText={(text) => setPhoto(text)}
+                autoCapitalize={"words"}
+            />
+            <MainButton style={{ marginTop: 60 }} onPress={() => save()} >      
             <ButtonText>
                 Salvar
             </ButtonText>
+            </MainButton>
         </MainContainer>
     );
 };
