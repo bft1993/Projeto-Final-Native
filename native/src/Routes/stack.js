@@ -13,6 +13,10 @@ import { Users } from '../screens/Users';
 import { createBottomTabNavigator} from "@react-navigation/bottom-tabs";
 import { Ionicons } from "@expo/vector-icons";
 import colors from "../themes/colors.js";
+import { Product } from '../screens/Product/index';
+import { ProductRegister } from '../screens/ProductRegister/index';
+import { EditProduct } from '../screens/EditProduct/index';
+
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -67,6 +71,10 @@ export function StackRoutes () {
             <Stack.Screen name='Users' component={Users} />
             <Stack.Screen name='UserRegister' component={UserRegister} />
             <Stack.Screen name='UserEdit' component={UserEdit} />
+
+            <Stack.Screen name='Product' component={Product} />
+            <Stack.Screen name='ProductRegister' component={ProductRegister} />
+            <Stack.Screen name='EditProduct' component={EditProduct} />
         </Stack.Navigator>
     );
 }
