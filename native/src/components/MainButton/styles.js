@@ -9,12 +9,12 @@ export const MainButton = styled.TouchableOpacity`
     margin-bottom: 5px;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 4px 4px #456135;
-    background-color: #87B28E;
+    box-shadow: 0 4px 4px ${colors.primary};
+    background-color: ${colors.fivenary};
 `;
 
 export const ButtonText = styled.Text`
-    color: #456135;
+    color: ${colors.primary};
     font-size: 14px;
     align-self: center;
     position: absolute;

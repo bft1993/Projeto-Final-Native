@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState } from "react";UserRegister
 import { MainContainer } from "../../components/MainContainer/styles.js";
 import { Header } from "../../components/Header/index.js";
 import { EditInputUser } from "../../components/EditInputUser/index.js";
@@ -7,29 +7,28 @@ import { ImgButton } from "../../components/ImgButton/index.js";
 import { Api } from "../../services/index.js";
 
 export const UserRegister = ({navigation}) => {
-    const [fCpf, setFCpf] = useState("");
-    const [fFoto, setFFoto] = useState("https://i.imgur.com/khLyPgQ.png");
-    const [fDtNascimento, setFDtNascimento] = useState("");
-    const [fLogin, setFLogin] = useState("");
-    const [fNome, setFNome] = useState("");
-    const [fSenha, setFSenha] = useState("");
+    const [ativo, setAtivo] = useState("");
+    const [cpf, setCpf] = useState("");
+    const [foto, setFoto] = useState("https://i.imgur.com/khLyPgQ.png");
+    const [dtNascimento, setDtNascimento] = useState("");
+    const [login, setLogin] = useState("");
+    const [nome, setNome] = useState("");
+    const [senha, setSenha] = useState("");
 
 
     const addPost = () => {
         const data = {
-            nome: fNome,
-            cpf: fCpf,
-            dtNascimento: fDtNascimento,
-            login: fLogin,
-            ativo: "true",
-            senha: fSenha,
-            foto: fFoto,
+            statusUsuario: ativo,
+            cpfUsuario: cpf,
+            fotoUsuario: foto,
+            dtNascimentoUsuario: dtNascimento,
+            loginUsuario: login,
+            nomeUsuario: nome,
+            senhaUsuario: senha,
         };
 
-        console.log(data);
-
         Api.post("/usuario", data)
-           .then(() => {
+           .then((res) => {
                 alert("Usuário cadastrado com sucesso!");
                 navigation.goBack();
            });
@@ -42,35 +41,41 @@ export const UserRegister = ({navigation}) => {
     return (
         <MainContainer>
             <Header title = {"Cadastrar Usuario"} goBack = {goBack} iconName = {"arrow-back"}  />
-            <ImgButton sourceImage = {fFoto}/>
+            <ImgButton sourceImage = {foto}/>
             <EditInputUser
-                placeHolder={"Cpf"}
-                onChangeText={(text) => setFCpf(text)}
+                placeHolder={"Informe o status"}
+                value={ativo}
+                onChangeText={(text) => setAtivo(text)}
                 autoCapitalize={"words"}
             />
             <EditInputUser
-                placeHolder={"Link da Foto"}
-                onChangeText={(text) => setFFoto(text)}
+                placeHolder={"Informe o CPF"}
+                onChangeText={(text) => setCpf(text)}
                 autoCapitalize={"words"}
             />
             <EditInputUser
-                placeHolder={"Data de nascimento"}
-                onChangeText={(text) => setFDtNascimento(text)}
+                placeHolder={"Informe o endereço da foto"}
+                onChangeText={(text) => setFoto(text)}
                 autoCapitalize={"words"}
             />
             <EditInputUser
-                placeHolder={"Login"}
-                onChangeText={(text) => setFLogin(text)}
+                placeHolder={"Informe a data de nascimento"}
+                onChangeText={(text) => setDtNascimento(text)}
                 autoCapitalize={"words"}
             />
             <EditInputUser
-                placeHolder={"Nome de usuário"}
-                onChangeText={(text) => setFNome(text)}
+                placeHolder={"Informe o login"}
+                onChangeText={(text) => setLogin(text)}
                 autoCapitalize={"words"}
             />
             <EditInputUser
-                placeHolder={"Senha"}
-                onChangeText={(text) => setFSenha(text)}
+                placeHolder={"Informe o nome de usuário"}
+                onChangeText={(text) => setNome(text)}
+                autoCapitalize={"words"}
+            />
+            <EditInputUser
+                placeHolder={"Informe a senha do usuário"}
+                onChangeText={(text) => setSenha(text)}
                 autoCapitalize={"words"}
             />
 
