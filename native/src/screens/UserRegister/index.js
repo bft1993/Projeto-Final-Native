@@ -1,4 +1,4 @@
-import { useState } from "react";UserRegister
+import { useState } from "react";
 import { MainContainer } from "../../components/MainContainer/styles.js";
 import { Header } from "../../components/Header/index.js";
 import { EditInputUser } from "../../components/EditInputUser/index.js";
@@ -7,28 +7,27 @@ import { ImgButton } from "../../components/ImgButton/index.js";
 import { Api } from "../../services/index.js";
 
 export const UserRegister = ({navigation}) => {
-    const [ativo, setAtivo] = useState("");
-    const [cpf, setCpf] = useState("");
-    const [foto, setFoto] = useState("https://i.imgur.com/khLyPgQ.png");
-    const [dtNascimento, setDtNascimento] = useState("");
-    const [login, setLogin] = useState("");
-    const [nome, setNome] = useState("");
-    const [senha, setSenha] = useState("");
+    const [fCpf, setFCpf] = useState("");
+    const [fFoto, setFFoto] = useState("https://i.imgur.com/khLyPgQ.png");
+    const [fDtNascimento, setFDtNascimento] = useState("");
+    const [fLogin, setFLogin] = useState("");
+    const [fNome, setFNome] = useState("");
+    const [fSenha, setFSenha] = useState("");
 
 
     const addPost = () => {
         const data = {
-            statusUsuario: ativo,
-            cpfUsuario: cpf,
-            fotoUsuario: foto,
-            dtNascimentoUsuario: dtNascimento,
-            loginUsuario: login,
-            nomeUsuario: nome,
-            senhaUsuario: senha,
+            nome: fNome,
+            cpf: fCpf,
+            dtNascimento: fDtNascimento,
+            login: fLogin,
+            ativo: "true",
+            senha: fSenha,
+            foto: fFoto,
         };
 
         Api.post("/usuario", data)
-           .then((res) => {
+           .then(() => {
                 alert("Usuário cadastrado com sucesso!");
                 navigation.goBack();
            });
@@ -41,41 +40,35 @@ export const UserRegister = ({navigation}) => {
     return (
         <MainContainer>
             <Header title = {"Cadastrar Usuario"} goBack = {goBack} iconName = {"arrow-back"}  />
-            <ImgButton sourceImage = {foto}/>
+            <ImgButton sourceImage = {fFoto}/>
             <EditInputUser
-                placeHolder={"Informe o status"}
-                value={ativo}
-                onChangeText={(text) => setAtivo(text)}
+                placeHolder={"Cpf"}
+                onChangeText={(text) => setFCpf(text)}
                 autoCapitalize={"words"}
             />
             <EditInputUser
-                placeHolder={"Informe o CPF"}
-                onChangeText={(text) => setCpf(text)}
+                placeHolder={"Link da Foto"}
+                onChangeText={(text) => setFFoto(text)}
                 autoCapitalize={"words"}
             />
             <EditInputUser
-                placeHolder={"Informe o endereço da foto"}
-                onChangeText={(text) => setFoto(text)}
+                placeHolder={"Data de nascimento"}
+                onChangeText={(text) => setFDtNascimento(text)}
                 autoCapitalize={"words"}
             />
             <EditInputUser
-                placeHolder={"Informe a data de nascimento"}
-                onChangeText={(text) => setDtNascimento(text)}
+                placeHolder={"Login"}
+                onChangeText={(text) => setFLogin(text)}
                 autoCapitalize={"words"}
             />
             <EditInputUser
-                placeHolder={"Informe o login"}
-                onChangeText={(text) => setLogin(text)}
+                placeHolder={"Nome de usuário"}
+                onChangeText={(text) => setFNome(text)}
                 autoCapitalize={"words"}
             />
             <EditInputUser
-                placeHolder={"Informe o nome de usuário"}
-                onChangeText={(text) => setNome(text)}
-                autoCapitalize={"words"}
-            />
-            <EditInputUser
-                placeHolder={"Informe a senha do usuário"}
-                onChangeText={(text) => setSenha(text)}
+                placeHolder={"Senha"}
+                onChangeText={(text) => setFSenha(text)}
                 autoCapitalize={"words"}
             />
 
