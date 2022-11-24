@@ -20,17 +20,19 @@ export const TitleContainer = styled.View`
 `;
 
 export const Title = styled.Text`
-  color: ${colors.primary};
-  font-family: sans-serif;
-  font-weight: bold;
-  font-size: 24px;
-  text-align: center;
+    color: ${colors.secondary};
+    font-weight: 800;
+    font-size: 24px;
+    margin-top: 42px;
+    font-weight: bold;
 `;
 
 export const Logo = styled.Image`
-  width: 100px;
-  height: 50px;
+    width: 380px;
+    height: 200px;
+    margin-top: -200px;
 `;
+
 
 
 

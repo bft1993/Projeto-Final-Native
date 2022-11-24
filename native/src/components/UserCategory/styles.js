@@ -3,11 +3,11 @@ import colors from "../../themes/colors.js";
 
 export const Card = styled.View`
   flex-direction: row;
-  background-color: #648E4B;
+  background-color: ${colors.secondary};
   width: 330px;
   height: 160px;
   border-radius: 20px;
-  border: 3px solid #456135;
+  border: 3px solid ${colors.primary};
   justify-content: space-between;
   align-items: center;
   margin-bottom: 20px;
@@ -18,7 +18,7 @@ export const Photo = styled.Image`
   height: 120px;
   border-radius: 20px;
   margin-left: 10px;
-  border: 3px solid #456135;
+  border: 3px solid ${colors.primary};
 `;
 
 export const TextContainer = styled.View`
@@ -30,7 +30,7 @@ export const TextContainer = styled.View`
 `;
 
 export const Name = styled.Text`
-  color: #FFF;
+  color: ${colors.quaternary};
   font-family: sans-serif;
   font-weight: bold;
   font-size: 14px;

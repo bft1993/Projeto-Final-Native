@@ -1,5 +1,6 @@
 import { MainContainer } from "../../components/MainContainer/styles.js";
 import { Header } from "../../components/Header/index.js";
+// import { HeaderLogo } from "../../components/HeaderLogo/index.js";
 import { useNavigation } from "@react-navigation/native";
 import { PlusButton } from "../../components/PlusButton/index.js";
 import { Api } from "../../services";
@@ -8,11 +9,12 @@ import { ItemCategory } from "../../components/ItemCategory/index.js";
 import { useState, useEffect } from "react";
 
 export const Categories = () => {
+  
   const navigation = useNavigation();
   const [category, setCategory] = useState([]);
 
   const renderItem = ({ item }) => (
-    <ItemCategory name={item.nome} photo={item.foto} />
+    <ItemCategory name={item.nome} photo={item.foto} id={item.id} />
   );
 
   useEffect(() => {
@@ -30,7 +32,8 @@ export const Categories = () => {
 
   return (
     <MainContainer>
-      <Header title={"Categorias"} iconName={"arrow-back"} goBack={goBack} />
+      <Header title={"Categorias"} iconName={"arrow-back"} goBack={goBack} /> 
+      {/* <HeaderLogo title={"Categorias"}/> */}
       <PlusButton onPress={() => navigation.navigate("CategoryRegister")} />
       <FlatList
         data={category}

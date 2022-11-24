@@ -22,7 +22,7 @@ export const CustomInput = styled.TextInput`
     padding-left: 5px;
     font-family: sans-serif;
     margin-bottom: 5px;
-    box-shadow: 0 4px 4px #456135;
-    background-color: #87B28E;
+    box-shadow: 0 4px 4px ${colors.primary};
+    background-color: ${colors.fivenary};
 `;
 

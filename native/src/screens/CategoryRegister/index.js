@@ -7,8 +7,9 @@ import { ImgButton } from "../../components/ImgButton/index.js";
 import { Api } from "../../services/index.js";
 
 export const CategoryRegister = ({navigation}) => {
+
     const [name, setName] = useState("");
-    const [photo, setPhoto] = useState("https://i.imgur.com/khLyPgQ.png");
+    const [photo, setPhoto] = useState("");
 
     const addPost = () => {
         const data = {
@@ -17,7 +18,7 @@ export const CategoryRegister = ({navigation}) => {
         };
 
         Api.post("/categoria", data)
-           .then((res) => {
+           .then(() => {
                 alert("Item Cadastrado com sucesso!");
                 navigation.goBack();
            });
@@ -29,7 +30,7 @@ export const CategoryRegister = ({navigation}) => {
 
     return (
         <MainContainer>
-            <Header title = {"Cadastrar categoria"} goBack = {goBack} iconName = {"arrow-back"}  />
+            <Header title = {"Cadastrar Categoria"} goBack = {goBack} iconName = {"arrow-back"}  />
             <ImgButton sourceImage = {photo}/>
             <EditInput
                 placeHolder={"Informe a categoria"}

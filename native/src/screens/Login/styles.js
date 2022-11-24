@@ -1,8 +1,9 @@
 import styled from 'styled-components/native';
+import colors from "../../themes/colors.js";
 
 export const Container = styled.View`
     flex: 1;
-    background-color: #FFFFFF;
+    background-color: ${colors.quaternary};;
     align-items: center;
     justify-content: center;
 `;
@@ -16,7 +17,7 @@ export const Logo = styled.Image`
 export const LoginText = styled.Text`
     font-family: sans-serif;
     text-align: center;
-    color: #22430F;
+    color: ${colors.sixnary};
     font-weight: bold;
     position: relative;
 `;
@@ -29,12 +30,12 @@ export const LoginButton = styled.TouchableOpacity`
     margin-bottom: 5px;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 4px 4px #456135;
-    background-color: #87B28E;
+    box-shadow: 0 4px 4px ${colors.primary};
+    background-color: ${colors.fivenary};
 `;
 
 export const Recover = styled.Text`
-    color: #120a8f;
+    color: ${colors.sevennary};
     font-family: sans-serif;
     font-size: 12px;
 `;
@@ -47,8 +48,8 @@ export const InputLogin = styled.TextInput`
     font-family: sans-serif;
     margin-top: 30px;
     margin-bottom: 30px;
-    box-shadow: 0 4px 4px #456135;
-    background-color: #87B28E;
+    box-shadow: 0 4px 4px ${colors.primary};
+    background-color: ${colors.fivenary};
 `;
 
 export const InputPassword = styled.TextInput`
@@ -58,12 +59,12 @@ export const InputPassword = styled.TextInput`
     padding-left: 5px;
     font-family: sans-serif;
     margin-bottom: 5px;
-    box-shadow: 0 4px 4px #456135;
-    background-color: #87B28E;
+    box-shadow: 0 4px 4px ${colors.primary};
+    background-color: ${colors.fivenary};
 `;
 
 export const Title = styled.Text`
-    color: #648E4B;
+    color: ${colors.secondary};
     font-weight: 800;
     font-size: 24px;
     margin-top: 42px;
