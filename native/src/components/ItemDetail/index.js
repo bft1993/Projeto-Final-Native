@@ -1,4 +1,3 @@
-
 import {
   Card,
   Name,
@@ -13,7 +12,6 @@ export const ItemDetail = ({
   description,
   price,
   qtyStorage,
-  category,
 }) => {
   return (
     <Card>
@@ -24,7 +22,6 @@ export const ItemDetail = ({
         <Name>Descrição: {description}</Name>
         <Name>Preço: R$ {price}</Name>
         <Name>Em estoque: {qtyStorage}</Name>
-        <Name>Categoria: {category}</Name>
       </TextContainer>
     </Card>
   );

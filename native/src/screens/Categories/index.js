@@ -19,7 +19,7 @@ export const Categories = () => {
 
   useEffect(() => {
     getCategories();
-  }, [category]);
+  }, []);
 
   const getCategories = async () => {
     const { data } = await Api.get("/categoria");

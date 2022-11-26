@@ -51,17 +51,12 @@ export const ItemProduct = ({
       <Card>
         <Photo source={{ uri: fotoProduct }} />
         <TextContainer>
-          <Name>{nomeProduct}</Name>
-          <Name>{descricaoProduct}</Name>
-          <Name>{precoProduct}</Name>
-          <Name>{qtdEstoqueProduct}</Name>
-          <Name>{categoriaProduct.nome}</Name>
-          <Photo
-            style={{ width: 15, height: 15 }}
-            source={{ uri: categoriaProduct.foto }}
-          />
+        <Name>Nome: {nomeProduct}</Name>
+        <Name>Descrição: {descricaoProduct}</Name>
+        <Name>Preço: R$ {precoProduct}</Name>
+        <Name>Em estoque: {qtdEstoqueProduct}</Name>
+        <Name>Nome Categoria: {categoriaProduct.nome}</Name>
         </TextContainer>
-
         <ButtonsContainer>
           <CustomButton onPress={() => deleteProduct(identificador)}>
             <FontAwesome5 name="trash" size={20} color={colors.primary} />

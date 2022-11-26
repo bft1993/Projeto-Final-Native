@@ -26,7 +26,7 @@ export const ProductDetail = () => {
   return (
     <MainContainer>
       <Header title={"Detalhe"} iconName={"arrow-back"} goBack={goBack} /> 
-             <ItemDetail id={produto.id} name={produto.nome} photo={produto.foto}  description={produto.descricao} price={produto.preco} qtyStorage={produto.qtdEstoque} category={produto.categoriaId}/>
+             <ItemDetail id={produto.id} name={produto.nome} photo={produto.foto}  description={produto.descricao} price={produto.preco} qtyStorage={produto.qtdEstoque} />
     </MainContainer>
   );
 

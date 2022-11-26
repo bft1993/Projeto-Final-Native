@@ -4,13 +4,13 @@ import { Container, Logo, Title, LoginText, ProdutoButton, UsuarioButton, Catego
 import { StatusBar } from 'expo-status-bar';
 import { useNavigation } from '@react-navigation/native';
 import { TouchableOpacity } from 'react-native';
-import Loading from '../Loading';
+
 
 export default function Menu () {
 
     const navigation = useNavigation();
 
-    function screenLoadin(){
+    function screenLoading(){
         navigation.navigate('Loading');
     }
 
@@ -50,7 +50,7 @@ export default function Menu () {
             </ProdutoButton>
             
             <SairButton>
-            <TouchableOpacity onPress={Loading}>
+            <TouchableOpacity onPress={screenLoading}>
                 <LoginText>Sair</LoginText>
             </TouchableOpacity>
             </SairButton>

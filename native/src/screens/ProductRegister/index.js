@@ -1,24 +1,25 @@
-import { useEffect, useState } from "react";
+import { useState, useEffect } from "react";
 import { MainContainer } from "../../components/MainContainer/styles.js";
 import { Header } from "../../components/Header/index.js";
 import { EditInputUser } from "../../components/EditInputUser/index.js";
 import { MainButton, ButtonText } from "../../components/MainButton/styles.js";
 import { ImgButton } from "../../components/ImgButton/index.js";
 import { Api } from "../../services/index.js";
-import { Picker } from "@react-native-picker/picker";
+import { Picker } from '@react-native-picker/picker';
 
 export const ProductRegister = ({ navigation }) => {
     const [nome, setNome] = useState("");
     const [foto, setFoto] = useState("https://i.imgur.com/khLyPgQ.png");
+    const [categoriaId, setCategoriaId] = useState();
     const [descricao, setDescricao] = useState("");
-    const [preco, setPreco] = useState();
-    const [qtdEstoque, setQTDEstoque] = useState();
+    const [preco, setPreco] = useState("");
+    const [qtdEstoque, setQTDEstoque] = useState("");
     const [categoria, setCategoria] = useState([]);
 
 
     const addPost = () => {
         const data = {
-            categoria: categoria,
+            categoriaId: categoriaId,
             descricao: descricao,
             foto: foto,
             nome: nome,
@@ -30,21 +31,21 @@ export const ProductRegister = ({ navigation }) => {
             .then((res) => {
                 alert("Produto cadastrado com sucesso!");
                 navigation.goBack();
-            });  
+            });
     };
-
     useEffect(() => {
-        getCategoria();
-    }, [categoria]);
-    
-    const getCategoria = async () => {
+        getCategory();
+    }, []);
+
+    const getCategory = async () => {
         const { data } = await Api.get("/categoria");
         setCategoria(data);
-    }
+    };
 
     function goBack() {
         navigation.goBack();
     }
+
     return (
         <MainContainer>
             <Header title={"Cadastrar Produto"} goBack={goBack} iconName={"arrow-back"} />
@@ -64,26 +65,39 @@ export const ProductRegister = ({ navigation }) => {
                 onChangeText={(text) => setDescricao(text)}
                 autoCapitalize={"words"}
             />
-            <Picker
-                selectedValue="Escolha uma categoria"
-                onValueChange={(itemValue, itemIndex) => 
-                    this.setCategoria({itemValue, itemIndex})
+            <Picker style={{
+                width: 187,
+                height: 33,
+                marginTop: 40,
+                marginBottom: 5,
+                borderRadius: 5,
+                borderColor: 'transparent',
+                alignItems: "center",
+                justifyContent: "center",
+                boxShadow: "0px 4px 4px #456135",
+                backgroundColor: '#87B28E',
+                color: '#fff',
+            }}
+                onValueChange={(itemValue) =>
+                setCategoriaId(itemValue)
                 }>
-                    {
-                        categoria.map(cr => {
-                            console.log("+++++++",cr) 
-                            return <Picker.item label={cr} value={cr}/>
-                        })
-                    }
+                {
+                    categoria.map((categoria) => {
+                        return (
+                            <Picker.Item label={categoria.nome} value={categoria.id} key={categoria.id} />
+                        );
+                    })
+                }
             </Picker>
+
             <EditInputUser
                 placeHolder={"Informe o preço"}
-                onChangeText={(number) => setPreco(number)}
+                onChangeText={(text) => setPreco(text)}
                 autoCapitalize={"words"}
             />
             <EditInputUser
                 placeHolder={"Informe o estoque"}
-                onChangeText={(number) => setQTDEstoque(number)}
+                onChangeText={(text) => setQTDEstoque(text)}
                 autoCapitalize={"words"}
             />
 
@@ -94,4 +108,4 @@ export const ProductRegister = ({ navigation }) => {
             </MainButton>
         </MainContainer>
     )
-}
+};

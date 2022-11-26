@@ -17,7 +17,7 @@ export const Users = () => {
 
   useEffect(() => {
     getUsers();
-  }, [user]);
+  }, []);
 
   const getUsers = async () => {
     const { data } = await Api.get("/usuario");
