@@ -1,22 +1,23 @@
+import { Ionicons } from "@expo/vector-icons";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { createStackNavigator } from '@react-navigation/stack';
 import React from 'react';
-import ForgotPassword from '../screens/ForgotPassword/index';
-import Login from '../screens/Login/index';
-import Loading from '../screens/Loading/index';
-import Menu from '../screens/Menu/index';
 import { Categories } from '../screens/Categories/index';
 import { CategoryRegister } from '../screens/CategoryRegister/index';
 import { EditCategory } from '../screens/EditCategory/index';
-import { createStackNavigator } from '@react-navigation/stack';
-import { UserRegister } from '../screens/UserRegister';
-import { UserEdit } from '../screens/UserEdit';
-import { Users } from '../screens/Users';
-import { createBottomTabNavigator} from "@react-navigation/bottom-tabs";
-import { Ionicons } from "@expo/vector-icons";
-import colors from "../themes/colors.js";
-import { Product } from '../screens/Product/index';
-import { ProductRegister } from '../screens/ProductRegister/index';
 import { EditProduct } from '../screens/EditProduct/index';
+import ForgotPassword from '../screens/ForgotPassword/index';
+import Loading from '../screens/Loading/index';
+import Login from '../screens/Login/index';
+import Menu from '../screens/Menu/index';
+import { Product } from '../screens/Product/index';
+import { ProductDetail } from '../screens/ProductDetail';
+import { ProductRegister } from '../screens/ProductRegister/index';
 import { UserDelete } from '../screens/UserDelete';
+import { UserEdit } from '../screens/UserEdit';
+import { UserRegister } from '../screens/UserRegister';
+import { Users } from '../screens/Users';
+import colors from "../themes/colors.js";
 
 
 const Stack = createStackNavigator();
@@ -77,6 +78,7 @@ export function StackRoutes () {
             <Stack.Screen name='ProductRegister' component={ProductRegister} />
             <Stack.Screen name='EditProduct' component={EditProduct} />
             <Stack.Screen name='UserDelete' component={UserDelete} />
+            <Stack.Screen name='ProductDetails' component={ProductDetail} />
         </Stack.Navigator>
     );
 }
